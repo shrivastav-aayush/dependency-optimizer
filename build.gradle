@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+apply plugin: DependencyOptimizerPlugin
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+mavenCentral()
+}
+
+dependencies {
+    implementation ("org.springframework.boot:spring-boot-starter-web:3.2.2") {
+    exclude module: "spring-boot-starter-json"
+    exclude module: "spring-boot-starter"
+    exclude module: "spring-boot-starter-tomcat"
+    exclude module: "spring-webmvc"
+    exclude module: "spring-web"
+}
+}
+
+tasks.named("optimizeDependencies").configure {
+    doLast {
+        println "Dependency optimization completed."
+    }
+}
