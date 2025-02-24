@@ -9,7 +9,7 @@ group = 'org.example'
 version = '1.0-SNAPSHOT'
 
 repositories {
-mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
@@ -19,6 +19,11 @@ dependencies {
     exclude module: "spring-boot-starter-tomcat"
     exclude module: "spring-webmvc"
     exclude module: "spring-web"
+}
+    implementation ("com.fasterxml.jackson.core:jackson-databind:2.5.1") {
+    exclude module: "jackson-annotations"
+    exclude module: "jackson-core"
+    exclude module: "jackson-bom"
 }
 }
 
