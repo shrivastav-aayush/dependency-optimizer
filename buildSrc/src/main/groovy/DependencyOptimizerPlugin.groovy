@@ -31,7 +31,6 @@ class DependencyOptimizerPlugin implements Plugin<Project> {
         }
     }
 
-
     Set<String> scanJavaImports(File srcDir) {
         Set<String> imports = new HashSet<>()
         Pattern importPattern = Pattern.compile("import\\s+([\\w.]+);")
